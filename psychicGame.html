@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Psychic Game</title>
+
+	
+	<script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<h1>The Psychic Game</h1>
+<h4>Guess what letter I'm thinking of</h4>
+<h4 id="W">Wins: </h4>
+<h4 id="L">Losses: </h4>
+<h4 id="G">Guesses Left: </h4>
+<h4 id="User Guesses">Your Guesses so far: </h4>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+
+    var guesses = 9;
+    var wins = 0
+    var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+
+    var losses = 0;
+   
+    var letterToGuess = "";
+    var lettersGuessed;
+    var gameOver = false;
+
+ initGame();
+
+   function initGame() {
+      var letterIndex = Math.floor(Math.random() * letters.length);
+      letterToGuess = letters[letterIndex];
+      guesses = 9;
+      lettersGuessed = [];
+      gameOver = false;
+  }
+
+
+    document.onkeyup = function(event){
+        var letterPressed = String.fromCharCode(event.keyCode).toLowerCase();
+        guesses--;
+
+        if (letterPressed == letterToGuess){
+            wins++;
+            gameOver = true;
+            document.getElementById("guesses").innerhtml
+
+        }
+
+        else {
+
+
+        }
+    }
+
+
+
+
+
+
+}
+
+
+
+</script>
+	
+</body>
+</html>
